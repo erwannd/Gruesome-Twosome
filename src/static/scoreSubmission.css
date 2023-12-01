@@ -4,6 +4,29 @@
 }
 
 .record-submission {
+  margin-top: 30px;
   font-family: "Start2P";
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.confirm-btn {
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.submit-modal {
+  margin-top: 20px;
+}
+
+.submit-modal input {
+  margin-left: 10px;
+  font-family: "Start2P";
+  font-size: 12px;
+  width: 150px;
+}
+
+.input label {
+  margin-left: 10px;
 }

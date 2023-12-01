@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../static/guessErrorModal.css";
 
 export default function GuessErrorModal({ errorMessage }) {

@@ -85,18 +85,20 @@ export default function App() {
   // this will be called by the LoginForm
   function handleLogin(user) {
     setUser(user);
-    axios
-      .get(
-        `https://wheelofortune.wl.r.appspot.com/findNameById?googleId=${user.uid}`
-      )
-      .then((response) => {
-        if (response.data !== null) {
-          setPlayerName(response.data[0].name);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (user !== null) {
+      axios
+        .get(
+          `https://wheelofortune.wl.r.appspot.com/findNameById?googleId=${user.uid}`
+        )
+        .then((response) => {
+          if (response.data !== null) {
+            setPlayerName(response.data[0].name);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   // Function to handle guess submission
@@ -152,11 +154,13 @@ export default function App() {
                     src={startBtn}
                     onClick={handleStart}
                     className="start-btn"
+                    draggable={false}
                   ></img>
                   <img
                     src={scoreBtn}
                     onClick={handleView}
                     className="score-btn"
+                    draggable={false}
                   ></img>
                 </div>
               )}
@@ -213,6 +217,7 @@ export default function App() {
                     onClick={handleBackToMainMenu}
                     onMouseOver={(e) => (e.target.src = backBtnFocus)}
                     onMouseOut={(e) => (e.target.src = backBtn)}
+                    draggable={false}
                   ></img>
                 </div>
               )}
